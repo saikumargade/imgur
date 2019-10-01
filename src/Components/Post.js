@@ -1,22 +1,22 @@
 import React from 'react'
 import logo from '../logo.svg'
 import '../App.css'
+import Icon from 'antd/es/icon'
 export default class Post extends React.Component{
   
     render(){
-        // const {title} = this.props
+        const {title} = this.props
         return(
             <div className="post">
-                <img width='100%' src={logo} alt="react logo"/>
-                {/* <p>{title}</p> */}
+                <img style={{boxSizing:'border-box',borderRadius:'5px'}} width='100%' src={logo} alt="react logo"/>
+                <p>{title}</p>
                 <div className='post-footer'>
-                <div className='upvote'></div>
-                <div className='downvote'></div>
-                <div className='icons'>
-                    <div className='up-count'>0</div>
-                    <div className='down-count'>0</div>
-                </div>
-                
+                <Icon type="like" style={{padding:'0px 15px'}} />
+                <Icon type="dislike" style={{padding:'0px 15px'}}/>
+                {/* <div className='up-count'>0</div>
+                <div className='down-count'>0</div> */}
+                <Icon type='message' style={{padding:'0px 15px'}}/>
+                <Icon type="eye" style={{padding:'0px 15px'}} />
                 </div>
             </div>
         )
