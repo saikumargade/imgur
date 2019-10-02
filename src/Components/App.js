@@ -1,18 +1,17 @@
 import React from 'react';
 import '../App.css';
-import Post from './Post'
+import Body from './Body'
+import Navbar from './Navbar.js'
 
-const images =['description','123','abc','new'];
+
 function App() {
   return (
     <div className="App">
-      {/* <Post  />
-      <Post />
-      <Post /> */}
+      <Navbar />
+      <Body />
+      {/* <Footer /> */}
 
-      {
-        images.map(img => {return <Post title={img}/>})
-      }
+      
     </div>
   );
 }
