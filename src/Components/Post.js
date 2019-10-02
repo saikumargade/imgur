@@ -9,7 +9,7 @@ export default class Post extends React.Component{
         return(
             <div className="post">
                 <img style={{boxSizing:'border-box',borderRadius:'5px'}} width='100%' src={logo} alt="react logo"/>
-                <p>{title}</p>
+                <p style={{padding:'0px 10px'}}>{title}</p>
                 <div className='post-footer'>
                 <Icon type="like" style={{padding:'0px 15px'}} />
                 <Icon type="dislike" style={{padding:'0px 15px'}}/>

@@ -39,3 +39,13 @@
   display: flex;
   margin: 10px 0px;
 }
+.button{
+  background: rgb(34, 131, 34);
+  color: white;
+  border-style: none;
+  border-radius: 2px;
+  margin: 0px 5px;
+  padding: 0px 5px;
+  cursor: pointer;
+
+}
