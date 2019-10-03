@@ -1,6 +1,6 @@
 import React from 'react'
 import Post from './Post'
-const images =['description','123','abc','new'];
+const images =['description','123','abc','new','description','123','abc','new','description','123','abc','new'];
 export default class Body extends React.Component{
     
     render(){

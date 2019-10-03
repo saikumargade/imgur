@@ -9,6 +9,7 @@
 } */
 .post-container{
   display: flex;
+  flex-wrap: wrap;
 }
 .post{
   width: 200px; 
