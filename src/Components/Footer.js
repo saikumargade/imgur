@@ -1,9 +1,10 @@
 import React from 'react'
+import Button from './Button'
 export default class extends React.Component{
     render(){
         return(
             <div>
-                <h3>footer comes here</h3>
+                <Button color='gray' content='About' />
             </div>
         )
     }

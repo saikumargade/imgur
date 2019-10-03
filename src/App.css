@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+/* #root{
+  margin: 15px;
+} */
 
 /* .App {
   
@@ -10,12 +13,15 @@
 .post-container{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  
 }
 .post{
   width: 200px; 
   height: 250px; 
   border: black solid 1px;
   border-radius: 5px;
+  /* flex-grow: 1; */
 }
 .up-count{
   margin-left: 7px;
@@ -39,14 +45,13 @@
 .navbar{
   display: flex;
   margin: 10px 0px;
+  /* justify-content: space-between; */
 }
 .button{
-  background: rgb(34, 131, 34);
   color: white;
   border-style: none;
   border-radius: 2px;
   margin: 0px 5px;
   padding: 0px 5px;
   cursor: pointer;
-
 }
