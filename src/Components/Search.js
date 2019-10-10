@@ -4,7 +4,7 @@ export default class Search extends React.Component{
     render(){
         return(
             <div>
-                <input placeholder='search here' style={{border:'black solid 1px',borderRadius:'3px',width:'400px',height:'25px'}}/>
+                <input className='search' placeholder='search here' style={{border:'black solid 1px',outline:'none',borderRadius:'3px',marginBottom:'5px',width:'400px',height:'25px',padding:'0px 7px'}}/>
                 <Icon type="search" style={{marginLeft:'-20px',cursor:'pointer'}}/>
             </div>
             

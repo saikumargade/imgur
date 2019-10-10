@@ -8,9 +8,11 @@ export default class Navbar extends React.Component{
             <div className='navbar'>
                 <Button content='New Post' color='rgb(34, 131, 34)' />
                 <Search />
-                <Icon type="message" style={{cursor:'pointer'}} />
-                <Button content='Sign in' color='rgb(63, 63, 184)' />
-                <Button content='Sign Up' color='rgb(34, 131, 34)' style={{alignSelf:'flex-end'}} />
+                <div className='nav-right'>
+                    <Icon type="message" style={{cursor:'pointer',alignSelf:'center'}} />
+                    <Button content='Sign in' color='rgb(63, 63, 184)' />
+                    <Button content='Sign Up' color='rgb(34, 131, 34)' style={{alignSelf:'flex-end'}} />
+                </div>
             </div>
         )
     }
