@@ -12,12 +12,13 @@ export default class Post extends React.Component{
     }
     
     handleLike=()=>{
-        this.newlike=this.state.like===''?'filled':'';
-        this.setState({like:this.newlike});
+        this.newlike=((this.state.like===''&&this.state.dislike==='')||(this.state.like===''&&this.state.dislike==='filled'))?'filled':'';
+        this.setState({like:this.newlike,dislike:''});
+
     }
      handleDislike=()=>{
-        this.newdislike=this.state.dislike===''?'filled':'';
-        this.setState({dislike:this.newdislike});
+        this.newdislike=((this.state.dislike===''&&this.state.like==='')||(this.state.dislike===''&&this.state.like==='filled'))?'filled':'';
+        this.setState({dislike:this.newdislike,like:''});
     }
   
     render(){
