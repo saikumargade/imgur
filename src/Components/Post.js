@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../logo.svg'
-import '../App.css'
+import '../App.css';
+import './Post.css';
 import Icon from 'antd/es/icon'
 export default class Post extends React.Component{
     constructor(){
@@ -22,6 +23,10 @@ export default class Post extends React.Component{
         this.newdislike=((this.state.dislike===''&&this.state.like==='')||(this.state.dislike===''&&this.state.like==='filled'))?'filled':'';
         this.setState({dislike:this.newdislike,like:''});
     }
+
+    exitPostDetails = ()=> {
+        this.setState({postDetailsDisplay: 'none'});
+    }
   
     render(){
         const {title} = this.props;
@@ -39,13 +44,14 @@ export default class Post extends React.Component{
                 <Icon type="eye" style={{padding:'0px 15px'}} />
                 </div>
 
-                <div className="postDetails" style={{display: this.state.postDetailsDisplay}}>
-                    Some random text here
-                    <img style={{boxSizing:'border-box',borderRadius:'5px'}} width='100%' src={logo} alt="react logo"/>
-                    <div className="postComments">
-                        <ol>
-                            {this.state.comments.map((comment, i) => (<li className="postComment" key={i}>comment</li>))}
-                        </ol>
+                <div className="postDetails" style={{display: this.state.postDetailsDisplay}} onClick={this.exitPostDetails}>
+                    <div className="postContainer">
+                        <img src={logo} alt="Post Image"/>
+                        <div className="postComments">
+                            <ol>
+                                {this.state.comments.map((comment, i) => (<li className="postComment" key={i}>comment</li>))}
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
