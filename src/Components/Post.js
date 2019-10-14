@@ -45,7 +45,7 @@ export default class Post extends React.Component{
                 </div>
 
                 <div className="postDetails" style={{display: this.state.postDetailsDisplay}} onClick={this.exitPostDetails}>
-                    <div className="postContainer">
+                    <div className="postContainer" onClick= {e=>e.stopPropagation()}>
                         <img src={logo} alt="Post Image"/>
                         <div className="postComments">
                             <ol>
