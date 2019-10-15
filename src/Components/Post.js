@@ -2,7 +2,8 @@ import React from 'react'
 import logo from '../logo.svg'
 import '../App.css';
 import './Post.css';
-import Icon from 'antd/es/icon'
+import Icon from 'antd/es/icon';
+import Button from './Button'
 export default class Post extends React.Component{
     constructor(){
         super();
@@ -10,7 +11,8 @@ export default class Post extends React.Component{
             like:'',
             dislike:'',
             showPostDetails: false,
-            comments: ['sample comment', 'sample comment 2'],
+            value:'',
+            comments: []
         }
     }
     
@@ -27,18 +29,33 @@ export default class Post extends React.Component{
     exitPostDetails = ()=> {
         this.setState({showPostDetails: false});
     }
+
+    handleChange = (e) => {
+        // console.log(e.target.value)
+        this.setState({
+        value:e.target.value
+        })
+    }
+
+    handleComment = () =>{
+        // console.log('handlecomment')
+        if(this.state.value)
+        this.setState({comments:this.state.comments.concat(this.state.value)})
+    }
   
     render(){
         const {title} = this.props;
 
         const postDetails = <div className="postDetails" onClick={this.exitPostDetails}>
             <div className="postContainer" onClick= {e=>e.stopPropagation()}>
-                <img src={logo} alt="Post Image"/>
+                <img src={logo} alt="Post"/>
                 <div className="postComments">
                     <ol>
-                        {this.state.comments.map((comment, i) => (<li className="postComment" key={i}>comment</li>))}
+                        {this.state.comments.map((comment, i) => (<li className="postComment" key={i}>{comment}</li>))}
                     </ol>
                 </div>
+                <input style={{outline:'none',height:'23px'}} onChange={this.handleChange}></input>
+                <Button handleComment={this.handleComment} color='grey' content='Add Comment'/>
             </div>
         </div>
 
@@ -51,7 +68,7 @@ export default class Post extends React.Component{
                 <Icon type="dislike"theme={this.state.dislike} onClick={this.handleDislike} style={{padding:'0px 15px',outline:'none'}}/>
                 {/* <div className='up-count'>0</div>
                 <div className='down-count'>0</div> */}
-                <Icon type='message' style={{padding:'0px 15px'}} onClick={()=> this.setState({showPostDetails: 'block'})}/>
+                <Icon type='message' style={{padding:'0px 15px',outline:'none'}} onClick={()=> this.setState({showPostDetails: 'block'})}/>
                 <Icon type="eye" style={{padding:'0px 15px'}} />
                 </div>
 
