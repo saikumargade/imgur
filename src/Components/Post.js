@@ -42,6 +42,14 @@ export default class Post extends React.Component{
         if(this.state.value)
         this.setState({comments:this.state.comments.concat(this.state.value)})
     }
+
+    handleClearLatest = () =>{
+        this.state.comments.pop()
+        this.setState({comments:this.state.comments})
+    }
+    handleClear = () =>{
+        this.setState({comments:[]})
+    }
   
     render(){
         const {title} = this.props;
@@ -49,13 +57,15 @@ export default class Post extends React.Component{
         const postDetails = <div className="postDetails" onClick={this.exitPostDetails}>
             <div className="postContainer" onClick= {e=>e.stopPropagation()}>
                 <img src={logo} alt="Post"/>
+                <input style={{outline:'none',height:'23px'}} onChange={this.handleChange}></input>
+                <Button handleFunction={this.handleComment} color='grey' content='Add Comment'/>
+                <Button handleFunction={this.handleClearLatest} color='grey' content='Clear latest comment'/>
+                <Button handleFunction={this.handleClear} color='grey' content='Clear All'/>
                 <div className="postComments">
                     <ol>
                         {this.state.comments.map((comment, i) => (<li className="postComment" key={i}>{comment}</li>))}
                     </ol>
                 </div>
-                <input style={{outline:'none',height:'23px'}} onChange={this.handleChange}></input>
-                <Button handleComment={this.handleComment} color='grey' content='Add Comment'/>
             </div>
         </div>
 
